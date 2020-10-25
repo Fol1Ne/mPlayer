@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/favoriteTracksFragmant"
+        android:name="com.example.mplayer.FavoriteTracksFragment.FavoriteTracksFragmant"
+        android:label="fragment_favorite_tracks_fragmant"
+        tools:layout="@layout/fragment_favorite_tracks_fragmant" >
+        <action
+            android:id="@+id/action_favoriteTracksFragmant_to_musicTrackFragment"
+            app:destination="@id/musicTrackFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.mplayer.MainFragment.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_favoriteTracksFragmant"
+            app:destination="@id/favoriteTracksFragmant" />
+        <action
+            android:id="@+id/action_mainFragment_to_musicTrackFragment"
+            app:destination="@id/musicTrackFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/musicTrackFragment"
+        android:name="com.example.mplayer.MusicTrackFragment.MusicTrackFragment"
+        android:label="fragment_music_track"
+        tools:layout="@layout/fragment_music_track" >
+        <action
+            android:id="@+id/action_musicTrackFragment_to_favoriteTracksFragmant"
+            app:destination="@id/favoriteTracksFragmant" />
+    </fragment>
+</navigation>
